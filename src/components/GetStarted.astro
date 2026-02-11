@@ -9,39 +9,51 @@
           <span class="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">get started?</span>
         </h2>
         <p class="mt-4 text-lg text-gray-400">
-          Install tmux-remote in under a minute. No account required.
+          Create a free account, set up the agent, and start connecting.
         </p>
       </div>
 
-      <!-- Install commands -->
-      <div class="space-y-4 mb-12">
-        <div>
-          <label class="text-sm text-gray-400 mb-2 block">Install the agent:</label>
-          <div class="code-block px-4 py-3 flex items-center justify-between group">
-            <code class="text-sm text-emerald-400"><span class="text-gray-500">$</span> curl -fsSL https://tmux-remote.com/install | sh</code>
-            <button onclick="navigator.clipboard.writeText('curl -fsSL https://tmux-remote.com/install | sh')" class="text-gray-500 hover:text-emerald-400 transition-colors flex-shrink-0 ml-4" title="Copy to clipboard">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-            </button>
+      <!-- Steps -->
+      <div class="space-y-6 mb-12">
+        <div class="glass-card rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-sm flex items-center justify-center">1</div>
+            <div>
+              <h3 class="text-sm font-semibold text-gray-200 mb-1">Sign up and create an agent</h3>
+              <p class="text-sm text-gray-400">Log in to the dashboard and create an agent for your machine.</p>
+            </div>
           </div>
         </div>
 
-        <div>
-          <label class="text-sm text-gray-400 mb-2 block">Pair your device:</label>
-          <div class="code-block px-4 py-3 flex items-center justify-between group">
-            <code class="text-sm text-emerald-400"><span class="text-gray-500">$</span> tmux-remote pair</code>
-            <button onclick="navigator.clipboard.writeText('tmux-remote pair')" class="text-gray-500 hover:text-emerald-400 transition-colors flex-shrink-0 ml-4" title="Copy to clipboard">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-            </button>
+        <div class="glass-card rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-sm flex items-center justify-center">2</div>
+            <div>
+              <h3 class="text-sm font-semibold text-gray-200 mb-1">Install and start the agent</h3>
+              <p class="text-sm text-gray-400 mb-2">Install the agent on your machine and start it. Copy the public key fingerprint from the agent output to the dashboard.</p>
+              <div class="code-block px-4 py-3 mt-2 flex items-center justify-between">
+                <code class="text-sm text-emerald-400"><span class="text-gray-500">$</span> curl -fsSL https://tmux-remote.com/install | sh</code>
+                <button onclick="navigator.clipboard.writeText('curl -fsSL https://tmux-remote.com/install | sh')" class="text-gray-500 hover:text-emerald-400 transition-colors flex-shrink-0 ml-4" title="Copy to clipboard">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div>
-          <label class="text-sm text-gray-400 mb-2 block">Connect to a session:</label>
-          <div class="code-block px-4 py-3 flex items-center justify-between group">
-            <code class="text-sm text-emerald-400"><span class="text-gray-500">$</span> tmux-remote attach my-session</code>
-            <button onclick="navigator.clipboard.writeText('tmux-remote attach my-session')" class="text-gray-500 hover:text-emerald-400 transition-colors flex-shrink-0 ml-4" title="Copy to clipboard">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-            </button>
+        <div class="glass-card rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold text-sm flex items-center justify-center">3</div>
+            <div>
+              <h3 class="text-sm font-semibold text-gray-200 mb-1">Pair your client and connect</h3>
+              <p class="text-sm text-gray-400 mb-2">Copy the pairing string from the agent console output to your iOS app or CLI client. Then connect to any tmux session.</p>
+              <div class="code-block px-4 py-3 flex items-center justify-between">
+                <code class="text-sm text-emerald-400"><span class="text-gray-500">$</span> tmux-remote attach my-session</code>
+                <button onclick="navigator.clipboard.writeText('tmux-remote attach my-session')" class="text-gray-500 hover:text-emerald-400 transition-colors flex-shrink-0 ml-4" title="Copy to clipboard">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
