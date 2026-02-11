@@ -1,13 +1,14 @@
 ---
 const comparisons = [
-  { feature: "Open ports required", ssh: "Yes (port 22)", tmuxRemote: "None" },
-  { feature: "Firewall configuration", ssh: "Required", tmuxRemote: "Not needed" },
-  { feature: "Works behind NAT", ssh: "Needs port forwarding", tmuxRemote: "Yes, automatically" },
-  { feature: "Dynamic IP handling", ssh: "Needs DDNS", tmuxRemote: "Built-in" },
-  { feature: "End-to-end encryption", ssh: "Yes", tmuxRemote: "Yes (DTLS + ECC)" },
-  { feature: "Public key auth", ssh: "Yes", tmuxRemote: "Yes" },
-  { feature: "Mobile client", ssh: "Third-party apps", tmuxRemote: "Native iOS app" },
-  { feature: "Password-less after setup", ssh: "With key config", tmuxRemote: "Always" },
+  { feature: "Open ports required", ssh: "Yes (port 22)", tailscale: "None", tmuxRemote: "None" },
+  { feature: "Firewall / NAT traversal", ssh: "Needs port forwarding", tailscale: "Usually works, issues with CGNAT", tmuxRemote: "Works behind any NAT" },
+  { feature: "Mediation server role", ssh: "None", tailscale: "Key distribution + ACL enforcement", tmuxRemote: "Discovery only (not in data path)" },
+  { feature: "End-to-end encryption", ssh: "Yes", tailscale: "Yes (WireGuard)", tmuxRemote: "Yes (DTLS + ECC)" },
+  { feature: "Setup on client devices", ssh: "SSH client only", tailscale: "Tailscale app on every device", tmuxRemote: "iOS app or CLI" },
+  { feature: "iOS battery impact", ssh: "None (connect on demand)", tailscale: "Always-on VPN, significant drain", tmuxRemote: "None (connect on demand)" },
+  { feature: "Uses system VPN slot", ssh: "No", tailscale: "Yes (blocks other VPNs)", tmuxRemote: "No" },
+  { feature: "Mobile terminal experience", ssh: "Third-party SSH apps", tailscale: "VPN + separate SSH app", tmuxRemote: "Purpose-built native iOS app" },
+  { feature: "Purpose", ssh: "General remote shell", tailscale: "General-purpose VPN mesh", tmuxRemote: "Built for terminal access" },
 ];
 ---
 <section class="py-24 relative" id="security">
@@ -23,7 +24,7 @@ const comparisons = [
     </div>
 
     <!-- Comparison table -->
-    <div class="fade-in max-w-3xl mx-auto">
+    <div class="fade-in max-w-4xl mx-auto">
       <div class="glass-card rounded-xl overflow-hidden">
         <div class="overflow-x-auto">
           <table class="w-full text-left">
@@ -31,6 +32,7 @@ const comparisons = [
               <tr class="border-b border-gray-700/50">
                 <th class="px-6 py-4 text-sm font-semibold text-gray-300"></th>
                 <th class="px-6 py-4 text-sm font-semibold text-gray-400">SSH</th>
+                <th class="px-6 py-4 text-sm font-semibold text-gray-400">Tailscale</th>
                 <th class="px-6 py-4 text-sm font-semibold text-emerald-400">tmux-remote</th>
               </tr>
             </thead>
@@ -39,6 +41,7 @@ const comparisons = [
                 <tr class:list={["border-b border-gray-700/30", { "table-highlight": i % 2 === 0 }]}>
                   <td class="px-6 py-3 text-sm text-gray-300 font-medium">{row.feature}</td>
                   <td class="px-6 py-3 text-sm text-gray-400">{row.ssh}</td>
+                  <td class="px-6 py-3 text-sm text-gray-400">{row.tailscale}</td>
                   <td class="px-6 py-3 text-sm text-emerald-400 font-medium">{row.tmuxRemote}</td>
                 </tr>
               ))}
