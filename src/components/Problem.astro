@@ -1,0 +1,42 @@
+---
+const painPoints = [
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>`,
+    title: "SSH is a hassle",
+    description: "Port forwarding, firewall rules, dynamic DNS, key management... just to check on a running process."
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+    title: "VPNs are overkill",
+    description: "Setting up a VPN just to access your terminal? Too much infrastructure for a simple task."
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>`,
+    title: "No mobile access",
+    description: "AI coding tools like Claude Code, Codex, and Aider run in tmux, but there's no good way to monitor them from your phone."
+  }
+];
+---
+<section class="py-24 relative" id="why">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-3xl sm:text-4xl font-bold">
+        Remote terminal access is
+        <span class="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">broken</span>
+      </h2>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        You shouldn't need a networking degree to check on your AI coding session from the couch.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {painPoints.map((point) => (
+        <div class="fade-in glass-card rounded-xl p-6 hover:border-red-500/20 transition-colors">
+          <div class="text-red-400 mb-4" set:html={point.icon} />
+          <h3 class="text-xl font-semibold mb-2">{point.title}</h3>
+          <p class="text-gray-400">{point.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

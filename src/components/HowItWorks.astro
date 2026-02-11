@@ -1,0 +1,57 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "Install the agent",
+    description: "A lightweight agent runs on your machine and connects your tmux sessions to the tmux-remote network.",
+    code: "curl -fsSL https://tmux-remote.com/install | sh"
+  },
+  {
+    number: "2",
+    title: "Pair your device",
+    description: "Scan a QR code or enter a one-time pairing code. Public keys are exchanged, so no passwords ever again.",
+    code: "tmux-remote pair"
+  },
+  {
+    number: "3",
+    title: "Connect from anywhere",
+    description: "Use the CLI, iOS app, or web dashboard. Your tmux sessions are just a tap away.",
+    code: "tmux-remote attach my-session"
+  }
+];
+---
+<section class="py-24 relative" id="how-it-works">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-3xl sm:text-4xl font-bold">
+        Up and running in
+        <span class="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">three steps</span>
+      </h2>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        No config files to edit. No ports to open. No VPN to set up.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Connecting line -->
+      <div class="hidden md:block absolute top-24 left-1/2 -translate-x-1/2 w-2/3 h-0.5 bg-gradient-to-r from-emerald-500/0 via-emerald-500/30 to-emerald-500/0"></div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {steps.map((step) => (
+          <div class="fade-in relative">
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 text-slate-950 font-bold text-xl mb-6 relative z-10">
+                {step.number}
+              </div>
+              <h3 class="text-xl font-semibold mb-3">{step.title}</h3>
+              <p class="text-gray-400 mb-4">{step.description}</p>
+              <div class="code-block px-4 py-3 text-sm text-emerald-400 text-left overflow-x-auto">
+                <span class="text-gray-500">$</span> {step.code}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

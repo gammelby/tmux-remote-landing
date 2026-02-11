@@ -1,0 +1,58 @@
+---
+const comparisons = [
+  { feature: "Open ports required", ssh: "Yes (port 22)", tmuxRemote: "None" },
+  { feature: "Firewall configuration", ssh: "Required", tmuxRemote: "Not needed" },
+  { feature: "Works behind NAT", ssh: "Needs port forwarding", tmuxRemote: "Yes, automatically" },
+  { feature: "Dynamic IP handling", ssh: "Needs DDNS", tmuxRemote: "Built-in" },
+  { feature: "End-to-end encryption", ssh: "Yes", tmuxRemote: "Yes (DTLS + ECC)" },
+  { feature: "Public key auth", ssh: "Yes", tmuxRemote: "Yes" },
+  { feature: "Mobile client", ssh: "Third-party apps", tmuxRemote: "Native iOS app" },
+  { feature: "Password-less after setup", ssh: "With key config", tmuxRemote: "Always" },
+];
+---
+<section class="py-24 relative" id="security">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-3xl sm:text-4xl font-bold">
+        SSH-grade security,
+        <span class="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">zero hassle</span>
+      </h2>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        Same trust model as SSH: public key exchange and mutual authentication. But without the networking headaches.
+      </p>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="fade-in max-w-3xl mx-auto">
+      <div class="glass-card rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-b border-gray-700/50">
+                <th class="px-6 py-4 text-sm font-semibold text-gray-300"></th>
+                <th class="px-6 py-4 text-sm font-semibold text-gray-400">SSH</th>
+                <th class="px-6 py-4 text-sm font-semibold text-emerald-400">tmux-remote</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisons.map((row, i) => (
+                <tr class:list={["border-b border-gray-700/30", { "table-highlight": i % 2 === 0 }]}>
+                  <td class="px-6 py-3 text-sm text-gray-300 font-medium">{row.feature}</td>
+                  <td class="px-6 py-3 text-sm text-gray-400">{row.ssh}</td>
+                  <td class="px-6 py-3 text-sm text-emerald-400 font-medium">{row.tmuxRemote}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust signal -->
+    <div class="fade-in mt-12 text-center">
+      <p class="text-gray-400 text-sm">
+        Powered by <a href="https://nabto.com" target="_blank" rel="noopener" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2">Nabto Edge</a>, enterprise-grade P2P connectivity trusted by companies worldwide.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+const features = [
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+    title: "Zero Configuration",
+    description: "No firewall rules, no open ports, no dynamic DNS. Uses outbound-only connections that work behind any NAT or firewall.",
+    tag: "Plug & Play"
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
+    title: "End-to-End Encrypted",
+    description: "DTLS with ECC keys. Same trust model as SSH: public key exchange and mutual authentication. No passwords after pairing.",
+    tag: "Secure"
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>`,
+    title: "Mobile-First",
+    description: "Native iOS app with full terminal support. Pattern overlays for AI coding tools like Claude Code make mobile interaction seamless.",
+    tag: "iOS"
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>`,
+    title: "Multi-Session",
+    description: "Manage multiple tmux sessions from a single interface. Attach from any device. Your sessions persist on your machine.",
+    tag: "Flexible"
+  }
+];
+---
+<section class="py-24 relative" id="features">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/10 to-transparent"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-3xl sm:text-4xl font-bold">
+        Everything you need,
+        <span class="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">nothing you don't</span>
+      </h2>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        tmux-remote is built for one thing: giving you fast, secure access to your terminal sessions from anywhere.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {features.map((feature) => (
+        <div class="fade-in glass-card rounded-xl p-8 hover:border-emerald-500/30 transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+              <Fragment set:html={feature.icon} />
+            </div>
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <h3 class="text-xl font-semibold">{feature.title}</h3>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-medium">{feature.tag}</span>
+              </div>
+              <p class="text-gray-400">{feature.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
